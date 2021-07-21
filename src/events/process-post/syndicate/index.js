@@ -1,5 +1,3 @@
-const twitter = require('./twitter')
-const pinboard = require('./pinboard')
 const logger = require('@architect/shared/logger')
 
 async function syndicate (post, syndicateTo) {
@@ -17,10 +15,10 @@ async function syndicate (post, syndicateTo) {
     }
     // ok to syndicate
     if (syndication.indexOf('https://twitter.com') > -1) {
-      url = await twitter.syndicate(post)
+      // url = await twitter.syndicate(post)
       if (url) logger.info(`Syndicated to Twitter ${url}`)
     } else if (syndication.indexOf('https://pinboard.in') > -1) {
-      await pinboard.syndicate(post)
+      // await pinboard.syndicate(post)
       logger.info('Syndicated to Pinboard')
       // no return value :(
     }
