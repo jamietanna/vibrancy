@@ -14,6 +14,9 @@ async function log (type, message, description) {
     description,
     expires
   }
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(log);
+  }
   await data.logs.put(log)
 }
 
