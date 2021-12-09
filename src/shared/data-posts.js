@@ -19,7 +19,7 @@ async function putPostsPublic (post) {
 // we want selected post-types and items in the 'posts' channel.
 // this is only set in the public-posts table because only public are shown
 function setHomepageFlag (post) {
-  const postTypes = ['article', 'note', 'photo']
+  const postTypes = ['article', 'note', 'photo', 'bookmark']
   post.homepage = postTypes.includes(post['post-type']) ? 1 : 0
 }
 
